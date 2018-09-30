@@ -1,0 +1,73 @@
+{
+  "name": "electron-quick-start",
+  "version": "1.0.3",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-packager .",
+    "builder:win": "electron-builder --win --ia32",
+    "builder:osx": "electron-builder --mac"
+  },
+  "build": {
+    "appId": "org.simulatedgreg.electron-1212",
+    "productName": "我的",
+    "directories": {
+      "output": "dist"
+    },
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "publish": [
+        {
+          "provider": "generic",
+          "url": "http://192.168.2.206:8090/mac"
+        }
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "zip"
+      ],
+      "publish": [
+        {
+          "provider": "generic",
+          "url": "http://192.168.2.206:8090/win"
+        }
+      ]
+    },
+    "dmg": {
+      "backgroundColor": "red",
+      "title": "made",
+      "contents": [
+        {
+          "x": 400,
+          "y": 128,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    }
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^2.0.0",
+    "electron-builder": "^20.28.3",
+    "electron-packager": "^12.1.1"
+  },
+  "dependencies": {
+    "electron-updater": "^3.1.2"
+  }
+}
