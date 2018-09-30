@@ -1,0 +1,10 @@
+# compiled output
+/dist
+/packages
+/builder
+
+#dependencies
+/node_modules
+
+# IDE - VSCode
+.vscode/*
